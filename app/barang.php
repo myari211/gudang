@@ -13,5 +13,6 @@ class barang extends Model
                             'harga_beli', 
                             'merk_barang',
                             'tipe_barang',
-                            'harga_jual'];
+                            'harga_jual',
+                            'id'];
 }

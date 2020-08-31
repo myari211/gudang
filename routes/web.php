@@ -35,6 +35,11 @@ Route::post('/barang/add', 'BarangController@add');
 Route::post('/barang/edit/{id}', 'BarangController@edit');
 Route::post('/barang/delete/{id}', 'BarangController@delete');
 
+//mutasi
+Route::get('/mutasi', 'MutasiController@index');
+Route::post('/mutasi/add', 'MutasiController@add');
+Route::post('/mutasi/delete/{id}', 'MutasiController@delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

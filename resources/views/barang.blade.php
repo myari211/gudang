@@ -25,7 +25,7 @@
             <button type="button" class="btn btn-warning d-flex align-items-end" data-toggle="modal" data-target="#edit{{ $item->id }}">
                 <i class="material-icons">edit</i>
             </button>
-            <button type="button" class="btn btn-primary mr-2 ml-2 d-flex align-items-center" data-toggle="modal" data-target="details{{$item->id}}">
+            <button type="button" class="btn btn-primary mr-2 ml-2 d-flex align-items-center" data-toggle="modal" data-target="#details{{$item->id}}">
                 <i class="material-icons">search</i>
             </button>
             <button type="button" class="btn btn-danger d-flex align-items-end" data-toggle="modal" data-target="#delete{{$item->id}}">
@@ -240,6 +240,82 @@
         </form>
       </div>
     </div>
-  </div>        
+  </div>
+  <div class="modal fade" id="details{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+            <h5 class="modal-title d-inline-flex text-white" id="exampleModalLabel">
+                <i class="material-icons">search</i>&nbsp;{{$item->nama_barang}}
+            </h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Nama Barang</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{ $item->nama_barang}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Merk Barang</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{ $item->merk_barang }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Tipe Barang</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{ $item->tipe_barang}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Harga Beli</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{ $item->harga_beli }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Category</p>
+                    </div>
+                    <div class="col-md-6">
+                        @foreach($edit as $detail)
+                        <p>: {{ $detail->jenis }}</p>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Harga Jual</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{ $item->harga_jual }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Lokasi</p>
+                    </div>
+                    <div class="col-md-6">
+                        @foreach($edit as $detail)
+                        <p>: {{ $detail->lokasi }}</p>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>                
   @endforeach
 @endsection
